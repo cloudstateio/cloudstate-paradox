@@ -9,9 +9,21 @@ install:
 script:
   - sbt test
 
+deploy:
+  provider: script
+  script:
+    - sbt publish
+  on:
+    tags: true
+    repo: cloudstateio/cloudstate-paradox
+
 env:
   global:
     - TRAVIS_JDK=adopt@1.8-0
+    # encrypted with: travis encrypt -r cloudstateio/cloudstate-paradox BINTRAY_USER=<user>
+    - secure: "bG22iZsIgS4m94qGEaeqgk3ialT27wPIzT+WjFz24oyk0IUOJb8ph9qcH4Wogp5V6rRBSaqcK/a3x5UfN5QpNn1/ZLbWDtTvDgynirvF0uPQmDSqxngCK2/bN7+diXer8GCwjdHUuutlOCHAujsiYXfL8xRcxptIIR5+vTtVq6QLYzSjUM9HlpIb2muP9A5vrdKJMXbuXOxIT6xl0DmaIgoYbwhPZpIi0P/f8SaIm0hlDXmdYxXcPmKPEhl0RBBXumyA8xfe4h9f7YJsyjZGeyHXSkdYInoqiceZH5I5hsL1tv1zcHoq4UjlhV0LSA865mQDuNvLieD0lsgtuZ/RUTbs+kaFm2eF7bHQlFGwmNMcuOkDGLQE79+J0pd6JfTmcgKFAXe3a/OPgXnbjOwRnE50V+U7B/vAEXpWm2kpDEFx03zWNF5EkigTsTNk5RxykfXF4NAKLn/5oXwuvrlgRpqS0JoVxCeznCOnrDm5ZkoidvsJb+41Nzg3MjNrrGIc9bqMvn2+4sgtNeqsihHXy6eMx6cAjLT0NJ0Pn+WqBzHe4Z+HZDem28q8VQ6TJ9ijwhP2ndDcZthzw4A34rofA4E3pr49tRD8m0MW8iJ9qd/nnSoKSimuqCOwKWJZbBsvBY6sBuCKQef/YxuTaQ+e0+DrSdkaLpMoAx/QC0zWSrE="
+    # encrypted with: travis encrypt -r cloudstateio/cloudstate-paradox BINTRAY_PASS=<api_key>
+    - secure: "EqKnJXk5w0wM+a83M9JFt9JF6+wfcw2rm978FQ8+6KvqciUPYywQGXYEIHi7Fy5l3ICw07n3CxgKcESN9mqu6FRB86SMukdDm8gvCup7Y927ihYQOo5A3mVASJxxZJQewSfW4QeBxbFrhJYwHkeBXBi0RzflWZNZI8cnuwY30zkPweHn6HZQ4gXabMyP5CETFbLI7hhLya7IdK4Hm8LEXDYKThPH8HBgl211M7Pzfw/m7dgBSbnSlc+0RCsbHIz5k3kNIR47tSa+QraM4JMjbLhj4Mq88ODpgRvaKRKKC3YU2ngqOHaJS6crojJkdBbGis6lQvnm0FI5fZN5ghpZ+X4AdS62uQLJRLSti9BiLiKnz7Mk1rQW3GNGhBpoaUrIhinVzUC7K5EEepgqdah8hKDx8hH/j6mcrhPVgSO/9TEtlynqVUBrj67JQ7VPmmSatXCcM/lUztk0ixkbXXnSDmHE8UM0rnQWbEs6E9nG5JDFLDowtEKQnYniKGjBN23qaBxsDcpXA/wuLSAboS1bzMJOgNAwG7hQjJ9Qo1PECdphgxLPi9blgUIOLIaxR5UpjmLQIqJ88XzcA9cN2EEW2W4YwiLBu///ORzqA96GduQgYF1at9tcISZ8QaVy3c9CSdOT9jupeO0o8RKC25cUXed+VrlCaq7pygjjSAlcoqA="
 
 before_cache:
   - find $HOME/.ivy2 -name "ivydata-*.properties" -print -delete

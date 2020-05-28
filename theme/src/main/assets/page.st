@@ -34,7 +34,7 @@
 		<link rel="stylesheet" type="text/css" href="$page.base$lib/foundation/dist/foundation.min.css"/>
 		<link rel="stylesheet" type="text/css" href="$page.base$css/page.css"/>
 
-		<link rel="icon" type="image/x-icon" href="$page.base$../favicon.ico">
+		<link rel="icon" type="image/x-icon" href="$page.base$../../../favicon.ico">
 	</head>
 
 	<body>
@@ -110,8 +110,8 @@
 
 				<footer class="site-footer">
 
-					<a href="$page.base$.."><img src="$page.base$images/cloudstate-stacked-white.svg"></a>
-					<p>© Cloudstate <script>document.write(new Date().getFullYear());</script> | <a href="$page.base$../privacy/">Privacy Policy</a> | <a class="optanon-toggle-display">Cookie Settings</a></p>
+					<a href="$page.base$../../.."><img src="$page.base$images/cloudstate-stacked-white.svg"></a>
+					<p>© Cloudstate <script>document.write(new Date().getFullYear());</script> | <a href="$page.base$../../../privacy/">Privacy Policy</a> | <a class="optanon-toggle-display">Cookie Settings</a></p>
 
 				</footer>
 

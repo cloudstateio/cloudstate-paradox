@@ -6,8 +6,9 @@ import com.lightbend.paradox.sbt.ParadoxPlugin
 
 object CloudstateParadoxPlugin extends AutoPlugin {
   import ParadoxPlugin.autoImport._
+  import DeployDocsPlugin.autoImport._
 
-  override def requires = ParadoxPlugin
+  override def requires = ParadoxPlugin && DeployDocsPlugin
   override def trigger = noTrigger
 
   val version = ParadoxPlugin.readProperty("cloudstate-paradox.properties", "cloudstate.paradox.version")
@@ -15,6 +16,7 @@ object CloudstateParadoxPlugin extends AutoPlugin {
   override def projectSettings: Seq[Setting[_]] = Seq(
     resolvers += Resolver.bintrayRepo("cloudstateio", "releases"),
     paradoxTheme := Some("io.cloudstate" % "cloudstate-paradox-theme" % version),
-    paradoxNavigationDepth := 3
+    paradoxNavigationDepth := 3,
+    deployMappings := (Compile / paradox / mappings).value
   )
 }

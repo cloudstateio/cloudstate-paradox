@@ -1,5 +1,7 @@
 # Cloudstate Paradox
 
+**Deprecated: Cloudstate documentation is now using Antora. See [cloudstate-antora](https://github.com/cloudstateio/cloudstate-antora).**
+
 This is a shared paradox theme and plugin for the Cloudstate family of projects.
 
 
